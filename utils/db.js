@@ -1,5 +1,5 @@
-import { MongoClient } from "mongodb";
-// const { MongoClient } = require('mongodb');
+// import { MongoClient } from "mongodb";
+const { MongoClient } = require('mongodb');
 
 const DB_HOST = process.env.DB_HOST || "localhost";
 const DB_PORT = process.env.DB_PORT || 27017;
@@ -28,7 +28,7 @@ class DBClient {
 
   /**
    * Check if the database connection is alive.
-   * @returns {boolean} True if connected, false otherwise.
+   * @returns: True if connected, false otherwise.
    */
   isAlive() {
     return !!this.db;
@@ -36,7 +36,7 @@ class DBClient {
 
   /**
    * Get the number of users in the database.
-   * @returns {Promise<number>} The count of users.
+   * @returns: The count of users.
    */
   async nbUsers() {
     return this.users.countDocuments();
@@ -44,7 +44,7 @@ class DBClient {
 
   /**
    * Get the number of files in the database.
-   * @returns {Promise<number>} The count of files.
+   * @returns: The count of files.
    */
   async nbFiles() {
     return this.files.countDocuments();
@@ -52,8 +52,8 @@ class DBClient {
 
   /**
    * Find a user based on the given query.
-   * @param {Object} query - The query to search for the user.
-   * @returns {Promise<Object|null>} The user object or null if not found.
+   * @param: query - The query to search for the user.
+   * @returns: The user object or null if not found.
    */
   async getUser(query) {
     const user = await this.db.collection("users").findOne(query);
