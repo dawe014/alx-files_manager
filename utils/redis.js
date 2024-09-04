@@ -1,8 +1,6 @@
-import redis from "redis";
+/* eslint-disable import/no-named-as-default */
 
-/**
- * Class for interacting with a Redis database.
- */
+import redis from "redis";
 class RedisClient {
   constructor() {
     this.client = redis.createClient();

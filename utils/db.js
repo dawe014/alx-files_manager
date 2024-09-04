@@ -1,6 +1,6 @@
-import { MongoClient } from "mongodb";
-// const { MongoClient } = require('mongodb');
+/* eslint-disable import/no-named-as-default */
 
+import { MongoClient } from "mongodb";
 const DB_HOST = process.env.DB_HOST || "localhost";
 const DB_PORT = process.env.DB_PORT || 27017;
 const DB_DATABASE = process.env.DB_DATABASE || "files_manager";
@@ -64,4 +64,3 @@ class DBClient {
 // Create an instance of DBClient and export it
 const dbClient = new DBClient();
 export default dbClient;
-
